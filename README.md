@@ -21,7 +21,7 @@ Requisitos:
 
 Para compilar:
 
-```bash
+```
 dotnet build
 
 Para executar:
@@ -33,6 +33,10 @@ dotnet run --project ./src/portScanner-arpScanner.csproj -- \
     --threads 100 \
     --output results.json
 
+```
+
+
+
 Parâmetros
 Parâmetro	Descrição
 --target	IP único ou bloco CIDR (ex: 192.168.0.0/24)
@@ -40,19 +44,21 @@ Parâmetro	Descrição
 --end-port	Porta final a ser escaneada
 --threads	Número máximo de operações simultâneas
 --output	Caminho para salvar o relatório em formato JSON
-Estrutura do Projeto
+ 
+ 
+   #   Estrutura do Projeto
 
-portScanner-arpScanner/
-├── src/
-│   ├── Program.cs
-│   ├── Scanner.cs
-│   ├── ServiceDetector.cs
-│   ├── TargetParser.cs
-│   ├── ReportWriter.cs
-│   └── Models/
-│       └── ScanResult.cs
-├── README.md
-├── portScanner-arpScanner.csproj
+      portScanner-arpScanner/
+       ├── src/
+       │   ├── Program.cs
+       │   ├── Scanner.cs
+       │   ├── ServiceDetector.cs
+       │   ├── TargetParser.cs
+       │   ├── ReportWriter.cs
+       │   └── Models/
+       │       └── ScanResult.cs
+       ├── README.md
+       ├── portScanner-arpScanner.csproj
 
 Saída
 
