@@ -1,30 +1,31 @@
 # Arpscanner
-ArpScanner é uma ferramenta avançada de varredura de rede escrita em C# com foco em segurança ofensiva e análise de redes corporativas. Ele combina técnicas de Port Scanning (TCP) com detecção de dispositivos via ARP Scanning, oferecendo uma visão detalhada da infraestrutura de rede em ambientes IPv4.
+ArpScanner is an advanced network scanning tool written in C# with a focus on experimental security and enterprise network analysis. It combines TCP Port Scanning techniques with ARP Scanning device detection, providing a detailed view of the network infrastructure in IPv4 environments.
+
+
 
 
 ---
 
-## Funcionalidades
+## Features
 
-- ARP scanning para detecção de hosts ativos em redes locais.
-- Varredura de portas TCP com detecção de banners.
-- Suporte a intervalos de IPs em notação CIDR (ex: `192.168.0.0/24`).
-- Controle de concorrência via `SemaphoreSlim`.
-- Exportação dos resultados em JSON formatado.
-
+- ARP scanning to detect active hosts on local networks.
+- TCP port scanning with banner detection.
+- Support for IP ranges in CIDR notation (e.g. `192.168.0.0/24`).
+- Concurrency control via `SemaphoreSlim`.
+- Export of results in formatted JSON.
 ---
 
-## Compilação
+## Compilation
 
-Requisitos:
+requirements:
 - [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-Para compilar:
+to compile:
 
 ```
 dotnet build
 
-Para executar:
+To execute:
 
 dotnet run --project ./src/portScanner-arpScanner.csproj -- \
     --target 192.168.1.0/24 \
@@ -37,17 +38,15 @@ dotnet run --project ./src/portScanner-arpScanner.csproj -- \
 
 
 
-Parâmetros
-Parâmetro	Descrição
---target	IP único ou bloco CIDR (ex: 192.168.0.0/24)
---start-port	Porta inicial a ser escaneada
---end-port	Porta final a ser escaneada
---threads	Número máximo de operações simultâneas
---output	Caminho para salvar o relatório em formato JSON
+Parameters
+Parameter Description
+--target Single IP or CIDR block (e.g. 192.168.0.0/24)
+--start-port Starting port to scan
+--end-port Ending port to scan
+--threads Maximum number of concurrent operations
+--output Path to save the report in JSON format
  
- 
-   #   Estrutura do Projeto
-
+   #   Project Structure
       portScanner-arpScanner/
        ├── src/
        │   ├── Program.cs
@@ -60,9 +59,9 @@ Parâmetro	Descrição
        ├── README.md
        ├── portScanner-arpScanner.csproj
 
-Saída
+Output
 
-O resultado do escaneamento será salvo em formato JSON no caminho especificado com o seguinte modelo:
+The scan result will be saved in JSON format to the specified path with the following template:
 
 [
   {
@@ -79,9 +78,9 @@ O resultado do escaneamento será salvo em formato JSON no caminho especificado 
   }
 ]
 
-Licença
+License
 
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 
 ---
